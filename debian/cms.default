@@ -1,0 +1,7 @@
+# Defaults for cms initscript
+# sourced by /etc/init/cms.conf
+
+# Additional options that are passed to the cmsResourceService.
+SHARD=0
+CONTEST_ID=1
+DAEMON_OPTS="-a $CONTEST_ID $SHARD"

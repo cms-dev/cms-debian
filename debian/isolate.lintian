@@ -1,0 +1,1 @@
+isolate: setuid-binary usr/bin/isolate 4755 root/isolate

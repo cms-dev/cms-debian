@@ -1,0 +1,42 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+#
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+#
+# Modified to make a template file for a multi-binary package with separated
+# build-arch and build-indep targets  by Bill Allombert 2001
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# This has to be exported to make some magic below work.
+export DH_OPTIONS
+
+SRCDIR=.
+
+%:
+	dh $@ --with python2 --sourcedirectory=$(SRCDIR)
+
+override_dh_auto_build:
+	cd $(SRCDIR)/isolate && ./compile.sh
+	set -x ; for locale in $(SRCDIR)/cms/server/po/*.po ; do \
+		cc=$${locale%.po} ; cc=$${cc##*/} \
+		path=$(SRCDIR)/cms/server/mo/$$cc/LC_MESSAGES ; \
+		mkdir -p $$path ; \
+		msgfmt $$locale -o $$path/cms.mo ; \
+	done
+
+override_dh_install:
+	dh_install
+	cd debian/cms/usr/share/doc/cms/examples && mv cms.conf.sample cms.conf
+	cd debian/cms/usr/share/doc/cms/examples && mv cms.ranking.conf.sample cms.ranking.conf
+
+override_dh_fixperms:
+	chmod 4750 debian/isolate/usr/bin/isolate
+
+override_dh_clean:
+	rm -f $(SRCDIR)/isolate/isolate

@@ -1,0 +1,30 @@
+Source: cms
+Section: misc
+Priority: extra
+Maintainer: Bernard Blackham <b-pkg@largestprime.net>
+Build-Depends: debhelper (>= 8.0.0), python (>= 2.7), python-mechanize (>= 0.2), python-beautifulsoup (>= 3.2), python-coverage (>= 3.4), python-setuptools, gettext
+Standards-Version: 3.9.3
+Homepage: https://github.com/cms-dev/cms
+Vcs-Git: git://github.com/cms-dev/cms
+Vcs-Browser: https://github.com/cms-dev/cms
+X-Python-Version: >= 2.7, << 3.0
+
+Package: isolate
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser, cgroup-lite | cgroup-bin
+Description: utility to isolate processes using cgroups
+ The isolate utility can run a process in an isolated environment. Using
+ Linux's namespace support, the process can be given an independent view of the
+ filesystem, networking and process trees.
+ .
+ It can also be used to measure the time and memory used by a process (and its
+ children).
+
+Package: cms
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}, isolate, adduser, python-setuptools (>= 0.6), python-tornado (>= 2.0), python-psycopg2 (>= 2.4), python-simplejson (>= 2.1), python-sqlalchemy (>= 0.7), python-netifaces (>= 0.5), python-crypto (>= 2.3), python-yaml (>= 3.10), python-tz (>= 2011k), python-psutil (>= 0.2), iso-codes, shared-mime-info
+Recommends: stl-manual
+Description: Contest Management System for running programming contests
+ CMS, or Contest Management System, is a distributed system for running and (to
+ some extent) organizing a programming contest.  It has been designed to be
+ general and to handle many different types of contests, tasks, scorings, etc.

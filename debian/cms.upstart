@@ -1,0 +1,18 @@
+# cms - Contest Management System
+
+description	"Contest Management System"
+
+start on runlevel [2345]
+stop on runlevel [!2345]
+
+respawn
+
+pre-start script
+	test -f /etc/cms.conf || { echo "Not starting as /etc/cms.conf does not exist." 1>&2 ; stop ; exit 0;  }
+end script
+
+script
+    test -r /etc/default/cms && . /etc/default/cms || true
+
+    exec start-stop-daemon --start -c cmsuser --exec /usr/bin/cmsResourceService -- $DAEMON_OPTS
+end script

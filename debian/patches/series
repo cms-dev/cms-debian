@@ -1,0 +1,6 @@
+start-ls-from-rs
+00-no-install
+01-use-non-local-dirs
+cms.conf-admin-on-localhost
+cms.conf-delete-sandbox-files
+cms.conf-start-logservice

@@ -1,0 +1,20 @@
+Description: Default admin server to bind to localhost
+ Only binding to local interfaces is a safer default for admin server. Users
+ can change this if they need to.
+ .
+ cms (0.9~git20130120+1~eec7dca4-1) precise; urgency=low
+ .
+   * Initial release.
+Author: Bernard Blackham <b-pkg@largestprime.net>
+
+--- cms-0.9~git20130120+1~eec7dca4.orig/examples/cms.conf.sample
++++ cms-0.9~git20130120+1~eec7dca4/examples/cms.conf.sample
+@@ -113,7 +113,7 @@
+     "_section": "AdminWebServer",
+ 
+     "_help": "Listening http address and port for AdminWebServer.",
+-    "admin_listen_address": "",
++    "admin_listen_address": "127.0.0.1",
+     "admin_listen_port":    8889,
+ 
+ 

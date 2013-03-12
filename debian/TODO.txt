@@ -1,0 +1,5 @@
+ - Generate random secret key - why doesn't CMS do this when creating a
+   contest?
+    base64.b64encode(uuid.uuid4().bytes + uuid.uuid4().bytes)
+
+ - Configure DB.

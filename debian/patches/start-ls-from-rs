@@ -1,0 +1,53 @@
+commit 586c80854f2e46cec138a5855c1d0a8acc0a155a
+Author: Bernard Blackham <b-gitcommits@largestprime.net>
+Date:   Sun Feb 17 03:03:59 2013 +0000
+
+    Add config option for RS to start LS.
+
+diff --git a/cms/__init__.py b/cms/__init__.py
+index 02ee25c..91b4252 100644
+--- a/cms/__init__.py
++++ b/cms/__init__.py
+@@ -111,6 +111,7 @@ class Config:
+ 
+         # ResourceService.
+         self.process_cmdline = ["/usr/bin/python", "./%s.py", "%d"]
++        self.start_logservice = False
+ 
+         # LogService.
+         self.color_shell_log = True
+diff --git a/cms/service/ResourceService.py b/cms/service/ResourceService.py
+index 1e21f1e..de41fab 100755
+--- a/cms/service/ResourceService.py
++++ b/cms/service/ResourceService.py
+@@ -114,9 +114,11 @@ class ResourceService(Service):
+ 
+         # Look for dead processes, and restart them.
+         for service in self._local_services:
+-            # We let the user start logservice and resourceservice.
+-            if service.name == "LogService" or \
+-                   service.name == "ResourceService":
++            # We let the user start ResourceService.
++            if service.name == "ResourceService":
++                continue
++            # Configurable as to whether we should start LogService.
++            if service.name == "LogService" and not config.start_logservice:
+                 continue
+ 
+             # If the user specified not to restart some service, we
+diff --git a/examples/cms.conf.sample b/examples/cms.conf.sample
+index 4e82bb7..18597af 100644
+--- src/examples/cms.conf.sample.tmp	2013-03-12 23:39:26.431926483 +0000
++++ src/examples/cms.conf.sample	2013-03-12 23:39:49.619926502 +0000
+@@ -145,6 +145,11 @@
+ 
+ 
+ 
++    "_help": "Should ResourceService should start LogService too?",
++    "start_logservice": false,
++
++
++
+     "_section": "LogService",
+ 
+     "_help": "Whether to print ANSI color codes on stdout/logfiles, in",

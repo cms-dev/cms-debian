@@ -1,0 +1,5 @@
+debian/tmp/usr/bin /usr
+debian/tmp/usr/lib /usr
+examples/cms.conf.sample /usr/share/doc/cms/examples/
+examples/cms.ranking.conf.sample /usr/share/doc/cms/examples/
+cms/server/mo/* /usr/share/locale
