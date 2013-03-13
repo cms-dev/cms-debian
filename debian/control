@@ -22,7 +22,7 @@ Description: utility to isolate processes using cgroups
 
 Package: cms
 Architecture: all
-Depends: ${misc:Depends}, ${python:Depends}, isolate, adduser, python-setuptools (>= 0.6), python-tornado (>= 2.0), python-psycopg2 (>= 2.4), python-simplejson (>= 2.1), python-sqlalchemy (>= 0.7), python-netifaces (>= 0.5), python-crypto (>= 2.3), python-yaml (>= 3.10), python-tz (>= 2011k), python-psutil (>= 0.2), iso-codes, shared-mime-info
+Depends: ${misc:Depends}, ${python:Depends}, isolate, adduser, python-setuptools (>= 0.6), python-tornado (>= 2.0), python-psycopg2 (>= 2.4), python-simplejson (>= 2.1), python-sqlalchemy (>= 0.7), python-netifaces (>= 0.5), python-crypto (>= 2.3), python-yaml (>= 3.10), python-tz (>= 2011k), python-psutil (>= 0.2), python-six (>= 1.1), iso-codes, shared-mime-info
 Recommends: stl-manual
 Description: Contest Management System for running programming contests
  CMS, or Contest Management System, is a distributed system for running and (to

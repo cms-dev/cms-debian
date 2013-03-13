@@ -1,3 +1,15 @@
+cms (1.1.0pre~git20130313~111658+37adb34-2.1) precise; urgency=low
+
+  * Add python-six dependency.
+
+ -- Bernard Blackham <b-pkg@largestprime.net>  Wed, 13 Mar 2013 11:26:27 +0000
+
+cms (1.1.0pre~git20130313~111658+37adb34-1) precise; urgency=low
+
+  * New upstream git snapshot.
+
+ -- Bernard Blackham <b-pkg@largestprime.net>  Wed, 13 Mar 2013 11:16:58 +0000
+
 cms (0.9~git20130120+1~eec7dca4-1) precise; urgency=low
 
   * Initial release.
