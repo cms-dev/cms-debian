@@ -1,5 +1,5 @@
-cms (1.1.0pre~git20130312~1+e75e677-1) UNRELEASED; urgency=low
+cms (0.9~git20130120+1~eec7dca4-1) precise; urgency=low
 
-  * New upstream git snapshot.
+  * Initial release.
 
- -- Bernard Blackham <b-pkg@largestprime.net>  Tue, 12 Mar 2013 23:26:54 +0000
+ -- Bernard Blackham <b-pkg@largestprime.net>  Sat, 19 Jan 2013 23:00:11 +0000

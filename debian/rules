@@ -16,6 +16,7 @@
 # This has to be exported to make some magic below work.
 export DH_OPTIONS
 
+# dh_clean doesn't honour --sourcedirectory, so we use '.' for now.
 SRCDIR=.
 
 %:
@@ -36,7 +37,10 @@ override_dh_install:
 	cd debian/cms/usr/share/doc/cms/examples && mv cms.ranking.conf.sample cms.ranking.conf
 
 override_dh_fixperms:
+	dh_fixperms
 	chmod 4750 debian/isolate/usr/bin/isolate
 
 override_dh_clean:
+	dh_clean
 	rm -f $(SRCDIR)/isolate/isolate
+	find -name '*.mo' | xargs rm -f
