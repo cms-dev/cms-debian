@@ -24,7 +24,7 @@ test -d "$GIT_DIR" || error "Path '$GIT_DIR' does not exist."
 REV=$(cd "$GIT_DIR" && git rev-parse --short HEAD) || error "$GIT_DIR is not a git repo?"
 RELEASE=$(cd "$GIT_DIR/docs" && python -c 'import conf ; print conf.release')
 
-ORIGVERSION="${RELEASE}~git$(date +%Y%m%d)~1+$REV"
+ORIGVERSION="${RELEASE}~git$(date +%Y%m%d~%H%M%S)+$REV"
 
 dch --force-bad-version -v "${ORIGVERSION}-1" "New upstream git snapshot."
 
