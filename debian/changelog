@@ -1,3 +1,15 @@
+cms (1.1.0pre~git20130313~111658+37adb34-3~precise) precise; urgency=low
+
+  * Build for precise.
+
+ -- Bernard Blackham <b-pkg@largestprime.net>  Fri, 15 Mar 2013 14:15:04 +0000
+
+cms (1.1.0pre~git20130313~111658+37adb34-3~quantal) quantal; urgency=low
+
+  * Fix separate building of arch and indep packages.
+
+ -- Bernard Blackham <b-pkg@largestprime.net>  Thu, 14 Mar 2013 11:39:51 +0000
+
 cms (1.1.0pre~git20130313~111658+37adb34-2.1~quantal) quantal; urgency=low
 
   * Build for quantal.
