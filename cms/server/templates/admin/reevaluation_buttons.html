@@ -1,0 +1,24 @@
+{% set url = "%s/%s/%s" % (url_root, reevaluation_par_name, reevaluation_par_value) %}
+<button onclick="cmsrpc.request(
+                 'EvaluationService', 0,
+                 'invalidate_submission',
+                 {'{{ reevaluation_par_name }}_id': {{ reevaluation_par_value }},
+                  'level': 'compilation'},
+                 function(response) { utils.redirect_if_ok('{{ url }}', response); }
+                 );"
+        title="Compilation" >C</button>
+<button onclick="cmsrpc.request(
+                 'EvaluationService', 0,
+                 'invalidate_submission',
+                 {'{{ reevaluation_par_name }}_id': {{ reevaluation_par_value }},
+                  'level': 'evaluation'},
+                 function(response) { utils.redirect_if_ok('{{ url }}', response); }
+                  );"
+        title="Evaluation" >E</button>
+<button onclick="cmsrpc.request(
+                 'ScoringService', 0,
+                 'invalidate_submission',
+                 {'{{ reevaluation_par_name }}_id': {{ reevaluation_par_value }}},
+                 function(response) { utils.redirect_if_ok('{{ url }}', response); }
+                 );"
+        title="Score" >S</button>

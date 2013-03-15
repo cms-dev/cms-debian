@@ -1,0 +1,24 @@
+We would like to acknowledge all the following people for contributing
+to CMS.
+
+MAIN AUTHORS (have push rights on GIT repository)
+
+Bernard Blackham <bernard@largestprime.net>
+Matteo Boscariol <boscarim@hotmail.com>
+Stefano Maggiolo <s.maggiolo@gmail.com>
+Giovanni Mascellani <mascellani@poisson.phc.unipi.it>
+Luca Wehrstedt <luca.wehrstedt@gmail.com>
+
+OTHER CONTRIBUTORS
+
+Giovanni Campagna (aka gcampax) <scampa.giovanni@gmail.com>
+Vittorio Gambaletta (aka VittGam) <VittGam@VittGam.net>
+David Greenaway <mail@davidgreenaway.com>
+Masaki Hara (aka qnighy) <ackie.h.gmai@gmail.com>
+Evgeny Martynov <evgeny@epochfail.com>
+William Pettersson <william.pettersson@gmail.com>
+Federico Scrinzi (aka volpino) <fox91@anche.no>
+Kenneth Wong <kenneth@wong.pro>
+
+And many other people that didn't write code, but provided useful
+comments, suggestions and feedback. :-)

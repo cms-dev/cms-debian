@@ -1,0 +1,14 @@
+setuptools>=0.6
+tornado>=2.0
+psycopg2>=2.4
+simplejson>=2.1
+sqlalchemy>=0.7
+netifaces>=0.5
+pycrypto>=2.3
+pyyaml>=3.10
+pytz>=2011k
+psutil>=0.6
+BeautifulSoup>=3.2
+coverage>=3.4
+mechanize>=0.2
+six>=1.1
