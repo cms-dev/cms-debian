@@ -22,7 +22,7 @@ case "$1" in
     configure)
         adduser --quiet --system --group --no-create-home --home /var/lib/cms cmsuser
         adduser cmsuser isolate
-        chown cmsuser:cmsuser /var/log/cms /var/cache/cms /var/lib/cms
+        chown -R cmsuser:cmsuser /var/log/cms /var/cache/cms /var/lib/cms
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
