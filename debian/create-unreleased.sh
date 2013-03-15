@@ -23,7 +23,12 @@ GIT_DIR=$1
 test -d "$GIT_DIR" || error "Path '$GIT_DIR' does not exist."
 REV=$(cd "$GIT_DIR" && git rev-parse --short HEAD) || error "$GIT_DIR is not a git repo?"
 RELEASE=$(cd "$GIT_DIR/docs" && python -c 'import conf ; print conf.release')
-DATE=$(date --date="@$(cd "$GIT_DIR" && git log -1 --format=%ct)" +%Y%m%d~%H%M%S)
+DATE=$(TZ=UTC date --date="@$(cd "$GIT_DIR" && git log -1 --format=%ct $REV)" +%Y%m%d~%H%M%S)
+
+# Make the version number sortable if a pre-release.
+case "$RELEASE" in
+    *[0-9]pre) RELEASE=${RELEASE%pre}~pre
+esac
 
 ORIGVERSION="${RELEASE}~git$DATE+$REV"
 
