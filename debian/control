@@ -5,14 +5,14 @@ Maintainer: Bernard Blackham <b-pkg@largestprime.net>
 Build-Depends: debhelper (>= 8.0.0), python (>= 2.7), python-mechanize (>= 0.2), python-beautifulsoup (>= 3.2), python-coverage (>= 3.4), python-setuptools, gettext
 Standards-Version: 3.9.3
 Homepage: https://github.com/cms-dev/cms
-Vcs-Git: git://github.com/cms-dev/cms
-Vcs-Browser: https://github.com/cms-dev/cms
+Vcs-Git: git://github.com/bblackham/cms-debian
+Vcs-Browser: https://github.com/bblackham/cms-debian
 X-Python-Version: >= 2.7, << 3.0
 
 Package: isolate
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, adduser, cgroup-lite | cgroup-bin
-Description: utility to isolate processes using cgroups
+Description: utility to isolate processes using namespaces
  The isolate utility can run a process in an isolated environment. Using
  Linux's namespace support, the process can be given an independent view of the
  filesystem, networking and process trees.
