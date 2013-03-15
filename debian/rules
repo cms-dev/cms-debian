@@ -33,12 +33,14 @@ override_dh_auto_build:
 
 override_dh_install:
 	dh_install
-	cd debian/cms/usr/share/doc/cms/examples && mv cms.conf.sample cms.conf
-	cd debian/cms/usr/share/doc/cms/examples && mv cms.ranking.conf.sample cms.ranking.conf
+	# Remove .sample extension from example files (may not be necessary if we
+	# are not building the cms package).
+	d=debian/cms/usr/share/doc/cms/examples && mv $$d/cms.conf.sample $$d/cms.conf || true
+	d=debian/cms/usr/share/doc/cms/examples && mv $$d/cms.ranking.conf.sample $$d/cms.ranking.conf || true
 
 override_dh_fixperms:
 	dh_fixperms
-	chmod 4750 debian/isolate/usr/bin/isolate
+	chmod 4750 debian/isolate/usr/bin/isolate || true
 
 override_dh_clean:
 	dh_clean
